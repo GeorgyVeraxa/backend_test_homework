@@ -9,11 +9,7 @@ class Human:
 
 
 class Student(Human):
-    #  метод ask_question() принимает параметр someone:
-    #  это объект, экземпляр класса Curator, Mentor или CodeReviewer,
-    #  которому Student задаёт вопрос;
-    #  параметр question — это просто строка
-    #  имя объекта и текст вопроса задаются при вызове метода ask_question
+
     def ask_question(self, someone, question):
         # напечатайте на экран вопрос в нужном формате
         print(f'{someone.name}, {question}')
