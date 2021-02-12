@@ -2,8 +2,6 @@ class Human:
     def __init__(self, name):
         self.name = name
 
-    # ответ по умолчанию для всех одинаковый, можно
-    # доверить его родительскому классу
     def answer_question(self, question):
         print('Очень интересный вопрос! Не знаю.')
 
@@ -11,9 +9,7 @@ class Human:
 class Student(Human):
 
     def ask_question(self, someone, question):
-        # напечатайте на экран вопрос в нужном формате
         print(f'{someone.name}, {question}')
-        # запросите ответ на вопрос у someone
         someone.answer_question(question)
         print()  # этот print выводит разделительную пустую строку
 
@@ -24,18 +20,16 @@ class Curator(Human):
             print('Держись, всё получится. Хочешь видео с котиками?')
         else:
             super().answer_question(question)
-# здесь нужно проверить, пришёл куратору знакомый вопрос или нет
-        # если да - ответить на него
-        # если нет - вызвать метод answer_question() у родительского класса
 
-# объявите и реализуйте классы CodeReviewer и Mentor
+
 class CodeReviewer(Human):
     def answer_question(self, question):
         if question == 'что не так с моим проектом?':
             print('О, вопрос про проект, это я люблю.')
         else:
             super().answer_question(question)
-            
+
+
 class Mentor(Human):
     def answer_question(self, question):
         if question == 'мне грустненько, что делать?':
@@ -45,7 +39,7 @@ class Mentor(Human):
         else:
             super().answer_question(question)
 
-#
+
 student1 = Student('Тимофей')
 curator = Curator('Марина')
 mentor = Mentor('Ира')
